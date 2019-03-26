@@ -1,0 +1,55 @@
+---
+title: "Be careful with P-Value"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+When try to figure out how age affect people's hourly wage, we run regression x to y. For exmaple, import data from NYLS97. ...introduce what it is. Reference number, also say this is not a good model because theoratically there are other variables should be controled, not only the age. 
+
+
+This is a linear NYLS97, very significant. p-value
+
+```{r}
+#import NYLS97, preparation:
+library(readr)
+mydata <- read_csv("Desktop/NYLS97/NYLS97.csv")
+mydata <- subset(mydata,select=-1)
+mydata <- subset(mydata,select=-1)
+mydata <- subset(mydata,select=-2)
+mydata <- subset(mydata,select=-3)
+mydata <- subset(mydata,select=-4)
+mydata <- subset(mydata,select=-3)
+
+#rename those variables.
+colnames(mydata)<-c("year","hourpay")
+# calculate the age of survey taker, the year was 2013.
+mydata["age"]<-2011-mydata["year"]
+#eliminate wage rate less than 0.
+NYLS97<-subset(mydata,hourpay>1 & hourpay<70000)
+#use log to eliminate the huge outlier effect.
+NYLS97["hourpay"]<-log(NYLS97["hourpay"]/100)
+
+#run regression: linear
+NYLSfit<-lm(hourpay~age, data=NYLS97)
+coeftest(NYLSfit)
+plot(hourpay~age, data=NYLS97, main="NYLS97 Wage VS Age",xlab="Age",ylab="Wage in log")
+abline(lm(hourpay~age,data=NYLS97),col="red")
+
+
+
+```
+
+## Including Plots
+
+This is NYLS97 with polynomial degree=4. very insignificant p-value.
+
+```{r}
+NYLSpoly <- lm(hourpay~poly(age,4,raw =T), data=NYLS97)
+coeftest(NYLSpoly)
+ggplot(NYLS97, aes(x=age, y=hourpay)) +geom_point()+stat_smooth(se=F, method='lm', formula=y~poly(x,4))
+
+```
