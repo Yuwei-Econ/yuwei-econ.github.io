@@ -1,20 +1,15 @@
----
-title: "Be careful with P-Value"
-output: html_document
----
+ 
+# Be careful with P-Value
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+### R Markdown
 When try to figure out how age affect people's hourly wage, we run regression x to y. For exmaple, import data from NYLS97. ...introduce what it is. Reference number, also say this is not a good model because theoratically there are other variables should be controled, not only the age. 
 
 
 This is a linear NYLS97, very significant. p-value
 
-some code below:
-
+Import NYLS97 dataset.
+```{r}
       #import NYLS97, preparation:
       mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
       mydata <- subset(mydata,select=-1)
@@ -39,7 +34,7 @@ some code below:
       plot(hourpay~age, data=NYLS97, main="NYLS97 Wage VS Age",xlab="Age",ylab="Wage in log")
       abline(lm(hourpay~age,data=NYLS97),col="red")
 
-
+```
 
 
 
