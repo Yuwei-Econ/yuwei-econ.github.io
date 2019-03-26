@@ -14,29 +14,29 @@ When try to figure out how age affect people's hourly wage, we run regression x 
 This is a linear NYLS97, very significant. p-value
 
 
-#import NYLS97, preparation:
-mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
-mydata <- subset(mydata,select=-1)
-mydata <- subset(mydata,select=-1)
-mydata <- subset(mydata,select=-2)
-mydata <- subset(mydata,select=-3)
-mydata <- subset(mydata,select=-4)
-mydata <- subset(mydata,select=-3)
+      #import NYLS97, preparation:
+      mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
+      mydata <- subset(mydata,select=-1)
+      mydata <- subset(mydata,select=-1)
+      mydata <- subset(mydata,select=-2)
+      mydata <- subset(mydata,select=-3)
+      mydata <- subset(mydata,select=-4)
+      mydata <- subset(mydata,select=-3)
 
-#rename those variables.
-colnames(mydata)<-c("year","hourpay")
-# calculate the age of survey taker, the year was 2013.
-mydata["age"]<-2011-mydata["year"]
-#eliminate wage rate less than 0.
-NYLS97<-subset(mydata,hourpay>1 & hourpay<70000)
-#use log to eliminate the huge outlier effect.
-NYLS97["hourpay"]<-log(NYLS97["hourpay"]/100)
+      #rename those variables.
+      colnames(mydata)<-c("year","hourpay")
+      # calculate the age of survey taker, the year was 2013.
+      mydata["age"]<-2011-mydata["year"]
+      #eliminate wage rate less than 0.
+      NYLS97<-subset(mydata,hourpay>1 & hourpay<70000)
+      #use log to eliminate the huge outlier effect.
+      NYLS97["hourpay"]<-log(NYLS97["hourpay"]/100)
 
-#run regression: linear
-NYLSfit<-lm(hourpay~age, data=NYLS97)
-coeftest(NYLSfit)
-plot(hourpay~age, data=NYLS97, main="NYLS97 Wage VS Age",xlab="Age",ylab="Wage in log")
-abline(lm(hourpay~age,data=NYLS97),col="red")
+      #run regression: linear
+      NYLSfit<-lm(hourpay~age, data=NYLS97)
+      coeftest(NYLSfit)
+      plot(hourpay~age, data=NYLS97, main="NYLS97 Wage VS Age",xlab="Age",ylab="Wage in log")
+      abline(lm(hourpay~age,data=NYLS97),col="red")
 
 
 
