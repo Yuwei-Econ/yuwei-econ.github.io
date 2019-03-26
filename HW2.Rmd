@@ -13,7 +13,7 @@ When try to figure out how age affect people's hourly wage, we run regression x 
 
 This is a linear NYLS97, very significant. p-value
 
-```{r}
+
 #import NYLS97, preparation:
 mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
 mydata <- subset(mydata,select=-1)
@@ -40,7 +40,7 @@ abline(lm(hourpay~age,data=NYLS97),col="red")
 
 
 
-```
+
 
 ## Including Plots
 
