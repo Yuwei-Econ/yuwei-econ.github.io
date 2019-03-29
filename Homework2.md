@@ -7,8 +7,8 @@
 We often times see researchers using age as the independent variable to measure changes in wage. This is prevalent in labour economics or any field having wage as dependent variable. I controled age when I was measuring the male wage premium as well. 
 But for students who are new to econometrics, we create our prediction model by testing and choosing the one suits the data most. Here is an example: 
 
-$$ latax?
-
+$$ latax? $$
+\(hjhjhjh\)
 
 Import NYLS97 dataset.
 ```{r}
