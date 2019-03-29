@@ -1,8 +1,8 @@
  
-# Be careful with P-Value
+# Do not let your research determined by P-Value
 
+## Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  
 
-### R Markdown
 When try to figure out how age affect people's hourly wage, we run regression x to y. For exmaple, import data from NYLS97. ...introduce what it is. Reference number, also say this is not a good model because theoratically there are other variables should be controled, not only the age. 
 
 
