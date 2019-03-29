@@ -1,24 +1,12 @@
  
 # Do not let your research determined by P-Value
 
-## Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  
+#### Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  
 
-When try to figure out how age affect people's hourly wage, we run regression x to y. For exmaple, import data from NYLS97. ...introduce what it is. Reference number, also say this is not a good model because theoratically there are other variables should be controled, not only the age. 
+### 
+We often times see researchers using age as the independent variable to measure changes in wage. This is prevalent in labour economics or any field having wage as dependent variable. I controled age when I was measuring the male wage premium as well. 
+But for students who are new to econometrics, we create our prediction model by testing and choosing the one suits the data most. Here is an example: 
 
-
-This is a linear NYLS97, very significant. p-value
-
-
-![ISLRP4](DoNotOpen/ISLRP4.png)
-![NYLS97plot](DoNotOpen/NYLSln.png)
-![ISLRTP](DoNotOpen/ISLRTP4.png)
-![ISLRTtest](DoNotOpen/ISLRTtest.png)
-![N97p4](DoNotOpen/N97p4.png)
-![NYLS97test](DoNotOpen/NYLS97test.png)
-![NYLSP4](DoNotOpen/NYLSP4.png)
-![Totalp4](DoNotOpen/Totalp4.png)
-![testln](DoNotOpen/testln.png)
-![testp4](DoNotOpen/testp4.png)
 
 Import NYLS97 dataset.
 ```{r}
@@ -48,10 +36,6 @@ Import NYLS97 dataset.
 
 ```
 
-
-
-## Including Plots
-
 This is NYLS97 with polynomial degree=4. very insignificant p-value.
 
 ```{r}
@@ -61,15 +45,32 @@ ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point(
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+![NYLS97plot](DoNotOpen/NYLSln.png)
+![NYLS97test](DoNotOpen/NYLS97test.png)
+![N97p4](DoNotOpen/N97p4.png)
+
+![NYLSP4](DoNotOpen/NYLSP4.png)
+
+We can see that in age between .... the linear effect of age on wage is significant. 
+if we include age^2, which is the polynomial to the degree 2, its not significant. but does it means we do not need to include age^2 in our model? according to p-value, yes. but should not because of p-value. 
+
+
+When try to figure out how age affect people's hourly wage, we run regression x to y. For exmaple, import data from NYLS97. ...introduce what it is. Reference number, also say this is not a good model because theoratically there are other variables should be controled, not only the age. 
+
+
+This is a linear NYLS97, very significant. p-value
 
 
 
 
 
-which is better? consider this example: from ISRl dataset. 
 
-intuitionly, wage increase farily quick before 35 years old, because of the increasing in return of the workexperience. After 35, people generally get married, the learning ability decreases and people turn to stay in the job, less ambitous and less human caputal investment form the workplacement. Thus, the salary turn to stay the same. also people get married and have children, less time for self-improvement and sel-studying. This make sense. After 60 years old, people are going to retire and the wage will decrease. wage doesnt increase forever when age incrases. therefore the polinomial to the degree of 4 is more intuitionally correct. 
+
+## Including Plots
+
+Lets look at another dataset which has wage data for people from 20 to 70. 
 ```{r}
 require(AER)
 require(ISLR)
@@ -79,18 +80,17 @@ plot(logwage ~ age, data=Wage, main="ISLR data Wage VS Age", xlab="Age", ylab="W
 abline(fit,col="blue")
 ggplot(Wage, aes(x=age, y=logwage)) + geom_point()+stat_smooth(se=F, method='lm', formula=y~poly(x,4))
 ```
-lets look at the data only from 29 t 35 in this dataset. 
+![Totalp4](DoNotOpen/Totalp4.png)
+its clear that the effect of age on wage is not linear. poly^4 explains better. 
+
+What went wrong?
 ```{r}
 WageTest <- subset(Wage, Wage["age"]<32 & Wage["age"]>26)
 Testfit<- lm(logwage ~ age, data=WageTest)
 coeftest(Testfit)
 plot(logwage~ age, data=WageTest)
 abline(lm(logwage~age,data=WageTest),col="green")
-
 ```
-
-While, this gives the similar result as NYLS97 does. indicating a serious problem with samll range of dataset. 
-
 
 ```{r}
 Testpoly <- lm(logwage ~ poly(age,4,raw=T),data=WageTest)
@@ -98,5 +98,27 @@ coeftest(Testpoly)
 ggplot(WageTest, aes(x=age, y=logwage)) + geom_point()+stat_smooth(se=F, method='lm', formula=y~poly(x,4))
 
 ```
+
+
+
+
+![ISLRP4](DoNotOpen/ISLRP4.png)
+
+![ISLRTP](DoNotOpen/ISLRTP4.png)
+![testln](DoNotOpen/testln.png)
+![testp4](DoNotOpen/testp4.png)
+
+![ISLRTtest](DoNotOpen/ISLRTtest.png)
+
+which is better? consider this example: from ISRl dataset. 
+
+intuitionly, wage increase farily quick before 35 years old, because of the increasing in return of the workexperience. After 35, people generally get married, the learning ability decreases and people turn to stay in the job, less ambitous and less human caputal investment form the workplacement. Thus, the salary turn to stay the same. also people get married and have children, less time for self-improvement and sel-studying. This make sense. After 60 years old, people are going to retire and the wage will decrease. wage doesnt increase forever when age incrases. therefore the polinomial to the degree of 4 is more intuitionally correct. 
+
+lets look at the data only from 29 t 35 in this dataset. 
+
+
+While, this gives the similar result as NYLS97 does. indicating a serious problem with samll range of dataset. 
+
+
 insignificant
 
