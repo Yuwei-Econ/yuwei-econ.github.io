@@ -1,11 +1,13 @@
  
-# Do not let your research determined by P-Value
+# P-Value should not be used to determine models. 
 
 #### Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  
 
 ### 
 We often times see researchers using age as the independent variable to measure changes in wage. This is prevalent in labour economics or any field having wage as dependent variable. I controled age when I was measuring the male wage premium as well. 
 But for students who are new to econometrics, we create our prediction model by testing and choosing the one suits the data most. Here is an example: 
+
+$$ latax?
 
 
 Import NYLS97 dataset.
