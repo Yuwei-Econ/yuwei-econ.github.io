@@ -57,7 +57,7 @@ This is NYLS97 with polynomial degree=4. very insignificant p-value.
 ```{r}
 NYLSpoly <- lm(hourpay~poly(age,4,raw =T), data=NYLS97)
 coeftest(NYLSpoly)
-ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point()+stat_smooth(se=F, method='lm', formula=y~poly(x,4))
+ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point()+stat_smooth(se=F, method='lm'，formula=y~poly(x,4))
 
 ```
 
