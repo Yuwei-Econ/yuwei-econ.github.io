@@ -9,13 +9,13 @@ When try to figure out how age affect people's hourly wage, we run regression x 
 This is a linear NYLS97, very significant. p-value
 
 
-![ISLP](DoNotOpen/ISLRP4.png)
+![ISLR](DoNotOpen/ISLRP4.png)
 
 ![NYLS97plot](DoNotOpen/NYLSln.png)
 
-![3setup2](Figures/3setup2.png)
-![3setup2](Figures/3setup2.png)
-![3setup2](Figures/3setup2.png)
+![ISLRTP](DoNotOpen/ISLRTP4.png)
+![ISLRTtest](DoNotOpen/ISLRTtest.png)
+![N97p4](DoNotOpen/N97p4.png)
 ![3setup2](Figures/3setup2.png)
 ![3setup2](Figures/3setup2.png)
 ![3setup2](Figures/3setup2.png)
