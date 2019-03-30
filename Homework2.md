@@ -11,7 +11,7 @@ P value is the probability of obtaining an effect at least as extreme as the one
 ### A Real Example: Hourly Wage growth 
 We often see researchers control age as the independent variable when measuring dependent variables which are related to wage. By doing so, they can eliminate the effect of age on wage and capture the effect of other independent variables, such as marriage, gender and family background. Thus, figuring out how age affect wage is important. Let’s simplify the model to only 2 variables: Age and Hourly Payment, and then estimate this linear euqation: 
 
-#### NYLS97 Dataset
+#### 1. NYLS97 Dataset
 I first used the data from the National Longitudinal Survey of Youth 1997, consisting of responses from approximately 9000 young people aged between 12 and 16 at the time of the first interview. The data I downloaded contains information collected in 2011. The reference number of Hourly payment is T6658700.
 
 ```{r}
@@ -32,7 +32,7 @@ abline(lm(hourpay~age,data=NYLS97),col="red")
 
 We can see from the coefficient test that age has significant impacts on the hourly wage. P-Value here tells us: if you assume that age has no impact on wage, the likelihood of obtaining this dataset is almost 0. Some people would feel that this is good because it indicates that including the variable Age would reduce improve the misspecification problem. However, can we stop here? This P-Value tells you neither how good this model structure is nor how to improve it. 
 
-### Another Example: Partial ISLR Data
+### 2. Partial ISLR Dataset
 Let’s try the same model with a different dataset. ISLR is the data stored in the R library, which contains sample subjects aged between 18 and 80. To make this regression comparable to the previous one, I first run a regression for sample subjects aged between 27 and 31 only.
 
 ```{r}
@@ -46,7 +46,7 @@ abline(lm(logwage~age,data=WageTest),col="green")
 
 The graph and the coefficient test look almost the same as the graph plotted by using NYLS97 dataset. Wow, replication! If you think this replication can prove that your model structure is good enough, then you are probably deceived by P-Value. P-value only tells you that: if age has no effect on wage, you’d obtain the observed difference or more in less than 1% of studies due to random sampling error. 
 
-### ISLR Dataset
+### 3. Full ISLR Dataset
 Then, let’s look at the same dataset contains sample subjects aged between 18 and 80.
 ```{r}
 require(AER)
@@ -62,7 +62,7 @@ ggplot(Wage, aes(x=age, y=logwage)) + geom_point()+stat_smooth(se=F, method='lm'
 According to the graph, it’s clear that the effect of age on wage is nonlinear. we can see an upward trend between age 18 and 35, but a downward trend after age equal to 60. This is intuitively right, the change of the wage reflects the profit employees brought to the company. Young people are promoted easily and their wage is raised quickly due to the increased return of the work experience. But when people reach 35, wage doesn’t change too much. This is because people generally got married, their learning ability decreases, they have less ambitious, and less human capital investment form their employer. They have kids to look after; therefore, they have less time for self-studying. This makes sense. After 60 years old, people are going to retire and the wage will decrease. wage doesn’t increase forever when age increases. Therefore using the fourth-degree polynomial in age is more intuitionally correct. 
 
 
-### Revision: NYLS97 and Partical ISLR datasets. 
+### 4. Revision: NYLS97 and Partical ISLR datasets. 
 Now let’s try what if we run the regression with a fourth-degree polynomial in age using NYLS97 and Sub-ISLR datasets.
 ```{r}
 require(ggplot2)
@@ -97,7 +97,7 @@ When determining the structure of the model, we should start by thinking the the
 
 Reference: 
 
-http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values
+"How to correctly interpret p value",2014, Minitab Blog, 17 April, http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values
 
 
 
