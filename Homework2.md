@@ -1,16 +1,13 @@
  
 # P-Value should not be used to determine models. 
 
-#### Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  
+#### Abstruct: This is a brief outline of why p-value is not determinative enough when dataset is partial. One swallow does not make a summer; we should always ask this question: can your dataset represent the entire population?  P-value significancy is not the reason behind the logic of choosing such hypothesis nor model. 
 
 ### 
 We often times see researchers using age as the independent variable to measure changes in wage. This is prevalent in labour economics or any field having wage as dependent variable. I controled age when I was measuring the male wage premium as well. 
 But for students who are new to econometrics, we create our prediction model by testing and choosing the one suits the data most. Here is an example: 
 
-$$ latax? $$
-\(hjhjhjh\)
-
-Import NYLS97 dataset.
+To conduct the analysis, I used data from the National Longitudinal Survey of Youth 1997, consisting of responses from approximately 9000 young people aged between 12 and 16 at the time of the first interview. 
 ```{r}
       #import NYLS97, preparation:
       mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
