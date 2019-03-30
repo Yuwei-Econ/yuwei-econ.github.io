@@ -60,11 +60,11 @@ ggplot(Wage, aes(x=age, y=logwage)) + geom_point()+stat_smooth(se=F, method='lm'
 ```
 ![ISLRTP](DoNotOpen/ISLRTP4.png)![Totalp4](DoNotOpen/Totalp4.png)
 
-According to the graph, it’s clear that the effect of age on wage is not linear. we can see a upward trend between age 18 and 35, but a downward trend after age eqaul to 60. This is intuitively right, the changeof the wage refects the profit employees brought to the company. Young people are promoted easily and their wage are raised quickly due to the increasing in return of the work experience. But when people reaches 35, wage doesn’t change too much. This is because people generally got married, their learning ability decreases, they have less ambitious , and less human capital investment form their employer. They have kids to lookafter therefore they have less time for self-studying. This make sense. After 60 years old, people are going to retire and the wage will decrease. wage doesn’t increase forever when age increases. therefore the polynomial to the degree of 4 is more intuitionally correct. 
+According to the graph, it’s clear that the effect of age on wage is nonlinear. we can see an upward trend between age 18 and 35, but a downward trend after age equal to 60. This is intuitively right, the change of the wage reflects the profit employees brought to the company. Young people are promoted easily and their wage is raised quickly due to the increased return of the work experience. But when people reach 35, wage doesn’t change too much. This is because people generally got married, their learning ability decreases, they have less ambitious, and less human capital investment form their employer. They have kids to look after; therefore, they have less time for self-studying. This makes sense. After 60 years old, people are going to retire and the wage will decrease. wage doesn’t increase forever when age increases. Therefore using the fourth-degree polynomial in age is more intuitionally correct. 
+
 
 ### Revise NYLS97 and Partical ISLR datasets. 
-Now let’s try what if we run regression with age contains polynomial to degree of 4 for NYLS97 dataset and Sub-ISLR dataset.
-
+Now let’s try what if we run the regression with a fourth-degree polynomial in age using NYLS97 and Sub-ISLR datasets.
 ```{r}
 require(ggplot2)
 NYLSpoly <- lm(hourpay~poly(age,4,raw =T), data=NYLS97)
@@ -86,8 +86,9 @@ ggplot(WageTest, aes(x=age, y=logwage)) + geom_point()+stat_smooth(se=F, method=
 ![testp4](DoNotOpen/testp4.png)
 Sub-ISLR Dataset
 
-P-Value shows not significant, it means: including X or not is not making any difference...
-But if we only have dataset for people age between 27 and 32? what should we do? We should include X^4, because intuitively......
+For both coefficient tests, P-Values are not significant. The interpretation is: assuming age has no effect on wage, the probabilities of obtaining such datasets are roughly 60%. Let's evaluate this result from a intuitive way: P-values for the revised models are not significant, but they are intuitively right. People aged between 27 and 32 compete on their leadership skills, their family background or their education, instead of age. Although p-values of linear models are significant, nonlinear models are more robust. 
+
+### Conclusion: 
 Theory and intuitions behind the model are evidence what we depend on when determinate the model, not the P-Value. Therefore, never say: I include this variable because it has significant P-Value!!. instead, you should say: I include/did not include this variable, because intuitively people in this age does..... or people do not.....
 
 
