@@ -95,10 +95,11 @@ When determining the structure of the model, we should start by thinking the the
 
 
 
-Reference: 
+### Reference: 
 
-"How to correctly interpret p value",2014, Minitab Blog, 17 April, http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values
+"How to correctly interpret p value",2014, Minitab Blog, 17 April  http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values
 
+Broniecki.P & Leemann.L, "Lab 7 – Polynomial Models",2013, Github, https://philippbroniecki.github.io/ML2017.io/day7.html
 
 
 
