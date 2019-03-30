@@ -11,19 +11,13 @@ To conduct the analysis, I used data from the National Longitudinal Survey of Yo
 ```{r}
       #import NYLS97, preparation:
       mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
-      mydata <- subset(mydata,select=-1)
-      mydata <- subset(mydata,select=-1)
-      mydata <- subset(mydata,select=-2)
-      mydata <- subset(mydata,select=-3)
-      mydata <- subset(mydata,select=-4)
-      mydata <- subset(mydata,select=-3)
 
       #rename those variables.
       colnames(mydata)<-c("year","hourpay")
-      # calculate the age of survey taker, the year was 2013.
+      # calculate the age of survey taker, the year was 2011, T6658700.
       mydata["age"]<-2011-mydata["year"]
       #eliminate wage rate less than 0.
-      NYLS97<-subset(mydata,hourpay>1 & hourpay<70000)
+      NYLS97<-subset(mydata,hourpay>1)
       #use log to eliminate the huge outlier effect.
       NYLS97["hourpay"]<-log(NYLS97["hourpay"]/100)
 
@@ -38,6 +32,7 @@ To conduct the analysis, I used data from the National Longitudinal Survey of Yo
 This is NYLS97 with polynomial degree=4. very insignificant p-value.
 
 ```{r}
+require(ggplot2)
 NYLSpoly <- lm(hourpay~poly(age,4,raw =T), data=NYLS97)
 coeftest(NYLSpoly)
 ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point()+stat_smooth(se=F, method='lm'，formula=y~poly(x,4))
@@ -46,11 +41,11 @@ ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point(
 
 
 
-![NYLS97plot](DoNotOpen/NYLSln.png)
-![NYLS97test](DoNotOpen/NYLS97test.png)
-![N97p4](DoNotOpen/N97p4.png)
+![NYLS97plot](DoNotOpen/2011ln.png)
+![NYLS97test](DoNotOpen/2011test.png)
+![N97p4test](DoNotOpen/2011P4test.png)
 
-![NYLSP4](DoNotOpen/NYLSP4.png)
+![NYLSP4](DoNotOpen/2011P4.png)
 
 We can see that in age between .... the linear effect of age on wage is significant. 
 if we include age^2, which is the polynomial to the degree 2, its not significant. but does it means we do not need to include age^2 in our model? according to p-value, yes. but should not because of p-value. 
