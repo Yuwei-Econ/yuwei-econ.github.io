@@ -7,19 +7,14 @@
 We often times see researchers using age as the independent variable to measure changes in wage. This is prevalent in labour economics or any field having wage as dependent variable. I controled age when I was measuring the male wage premium as well. 
 But for students who are new to econometrics, we create our prediction model by testing and choosing the one suits the data most. Here is an example: 
 
-To conduct the analysis, I used data from the National Longitudinal Survey of Youth 1997, consisting of responses from approximately 9000 young people aged between 12 and 16 at the time of the first interview. 
+To conduct the analysis, I used data from the National Longitudinal Survey of Youth 1997, consisting of responses from approximately 9000 young people aged between 12 and 16 at the time of the first interview. T6658700.= 2011 data
 ```{r}
       #import NYLS97, preparation:
       mydata <- read_csv("Downloads/NYLS97/NYLS97.csv")
-
-      #rename those variables.
       colnames(mydata)<-c("year","hourpay")
-      # calculate the age of survey taker, the year was 2011, T6658700.
       mydata["age"]<-2011-mydata["year"]
-      #eliminate wage rate less than 0.
       NYLS97<-subset(mydata,hourpay>1)
-      #use log to eliminate the huge outlier effect.
-      NYLS97["hourpay"]<-log(NYLS97["hourpay"]/100)
+      NYLS97["hourpay"]<-log(NYLS97["hourpay"])
 
       #run regression: linear
       NYLSfit<-lm(hourpay~age, data=NYLS97)
@@ -41,8 +36,26 @@ ggplot(NYLS97, aes(x=age, y=hourpay),main="polynomial to degree 4") +geom_point(
 
 
 
-![NYLS97plot](DoNotOpen/2011ln.png)
 ![NYLS97test](DoNotOpen/2011test.png)
+![NYLS97plot](DoNotOpen/2011ln.png)
+
+We can see from the graph, although the line looks pretty much same to a straight line, according to p-value, age still has a significant impact on hourly wage. Does it mean we can leave it here? 
+
+To prove that p-value is not a good indicater, I used ISLR dataset in R library. This dataset contains age from 18 to 80. I first looked at its data for entire age, then picked up data between 29-34, the same age sample NYLS97 has.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![N97p4test](DoNotOpen/2011P4test.png)
 
 ![NYLSP4](DoNotOpen/2011P4.png)
