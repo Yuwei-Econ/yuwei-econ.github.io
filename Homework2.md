@@ -9,7 +9,7 @@ P value is the probability of obtaining an effect at least as extreme as the one
 
 
 ### A Real Example: Hourly Wage growth 
-We often see researchers control age as the independent variable when measuring dependent variables which are related to wage. By doing so, they can eliminate the effect of age on wage and capture the effect of other independent variables, such as marriage, gender and family background. Thus, figuring out how age affect wage is important. Let’s simplify the model to only 2 variables: Age and Hourly Payment, and then estimate this linear euqation: 
+We often see researchers control age as the independent variable when measuring dependent variables which are related to wage. By doing so, they can eliminate the effect of age on wage and capture the effect of other independent variables, such as marriage, gender and family background. Thus, figuring out how age affect wage is important. Let’s focus on a simple linear equation contains only 2 variables: Age and Hourly Payment: 
 
 #### 1. NYLS97 Dataset
 I first used the data from the National Longitudinal Survey of Youth 1997, consisting of responses from approximately 9000 young people aged between 12 and 16 at the time of the first interview. The data I downloaded contains information collected in 2011. The reference number of Hourly payment is T6658700.
