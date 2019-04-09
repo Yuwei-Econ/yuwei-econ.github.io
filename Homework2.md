@@ -30,7 +30,7 @@ abline(lm(hourpay~age,data=NYLS97),col="red")
 ```
 ![NYLS97test](DoNotOpen/2011test.png) ![NYLS97plot](DoNotOpen/2011ln.png)
 
-We can see from the coefficient test that age has significant impacts on the hourly wage. P-Value here tells us: if you assume that age has no impact on wage, the likelihood of obtaining this dataset is almost 0. Some people would feel that this is good because it indicates that including the variable Age would reduce improve the misspecification problem. However, can we stop here? This P-Value tells you neither how good this model structure is nor how to improve it. 
+We can see from the coefficient test that age has significant impacts on the hourly wage. P-Value here tells us: if you assume that age has no impact on wage, the likelihood of obtaining this dataset is almost 0. Some people would feel that this is good because it indicates that including the variable Age would improve the misspecification problem. However, can we stop here? This P-Value tells you neither how good this model structure is nor how to improve it. 
 
 ### 2. Partial ISLR Dataset
 Let’s try the same model with a different dataset. ISLR is the data stored in the R library, which contains sample subjects aged between 18 and 80. To make this regression comparable to the previous one, I first run a regression for sample subjects aged between 27 and 31 only.
