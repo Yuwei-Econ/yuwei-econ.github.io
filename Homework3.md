@@ -69,12 +69,8 @@ par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
 
-   <img src="DoNotOpen/0.1.png/" width="300">< img src="DoNotOpen/0.2.png/" width="300">
-
 
 ![](DoNotOpen/0.1.png)![](DoNotOpen/0.2.png)
-
-![NYLS97test](DoNotOpen/0.3.png)
 
 ### Captureing best respondings:
 n<-500
