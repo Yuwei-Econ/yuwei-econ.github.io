@@ -69,9 +69,8 @@ par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
 <figure class="half">
- <img width="150" height="150" src=DoNotOpen/0.1.png/>
- <img width="150" height="150" src=DoNotOpen/0.2.png/>
-  
+   <img width="300" height="300" src=DoNotOpen/0.1.png/>
+   <img width="300" height="300" src=DoNotOpen/0.2.png/>
 </figure>
 
 ![NYLS97test](DoNotOpen/0.3.png) 
