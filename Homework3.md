@@ -69,6 +69,11 @@ par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
 
+![NYLS97test](DoNotOpen/0.1.png) 
+![NYLS97test](DoNotOpen/0.2.png) 
+![NYLS97test](DoNotOpen/0.3.png) 
+
+
 ### Captureing best respondings:
 n<-500
 ```{r}
@@ -153,6 +158,9 @@ par(new=TRUE)
 plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 
 ```
+
+![NYLS97test](DoNotOpen/1.1.png) ![NYLS97plot](DoNotOpen/1.2.png)
+![NYLS97test](DoNotOpen/1.3.png) ![NYLS97plot](DoNotOpen/2011ln.png)
 ### Conclusion: 
 
 
