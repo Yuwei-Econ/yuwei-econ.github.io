@@ -59,8 +59,10 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
-<img src="DoNotOpen/0.1.png/" width="270"><img src="DoNotOpen/0.2.png/" width="270"><img src="DoNotOpen/0.3.png/" width="250"> 
-
+<img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420">
+<centre>
+  <img src="DoNotOpen/0.3.png/" width="500"> 
+</centre>
 
 ### Captureing best respondings:
 Now lets computing wife and husband's best respounds to each other's payoff functions. at time t0-t1, wife made her best responds regard to husband's random probabilities of choosing shopping and updated q, wife's probabilities of chooing shopping. At time t1-t2, wife's updated probabilities are took into account by husband and so forth.  
