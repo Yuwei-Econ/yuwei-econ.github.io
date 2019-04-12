@@ -59,10 +59,8 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
-<img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420"> 
-<centre.
-<img src="DoNotOpen/0.3.png/" width="500"> 
-</centre>
+<img src="DoNotOpen/0.1.png/" width="260"><img src="DoNotOpen/0.2.png/" width="260"><img src="DoNotOpen/0.3.png/" width="260"> 
+
 
 ### Captureing best respondings:
 Now lets computing wife and husband's best respounds to each other's payoff functions. 
@@ -120,8 +118,8 @@ par(new=TRUE)
 plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 
 ```
+<img src="DoNotOpen/1.1.png/" width="420"><img src="DoNotOpen/1.2.png/" width="420"> 
 
-![NYLS97test](DoNotOpen/1.1.png)![NYLS97plot](DoNotOpen/1.2.png)
 
 ### Conclusion: 
 
