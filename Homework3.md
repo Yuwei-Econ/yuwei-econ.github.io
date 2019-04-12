@@ -59,7 +59,7 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
-<img src="DoNotOpen/0.1.png/" width="250"><img src="DoNotOpen/0.2.png/" width="250"><img src="DoNotOpen/0.3.png/" width="260"> 
+<img src="DoNotOpen/0.1.png/" width="270"><img src="DoNotOpen/0.2.png/" width="270"><img src="DoNotOpen/0.3.png/" width="250"> 
 
 
 ### Captureing best respondings:
