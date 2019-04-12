@@ -120,7 +120,7 @@ plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 ```
 <img src="DoNotOpen/1.1.png/" width="420"><img src="DoNotOpen/1.2.png/" width="420"> 
 
-
+h
 ### Conclusion: 
 
 
