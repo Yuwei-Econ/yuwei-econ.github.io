@@ -68,7 +68,7 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
-<img src="DoNotOpen/0.1.png/" width="500"><img src="DoNotOpen/0.2.png/" width="500"> 
+<img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420"> 
 
 
 
