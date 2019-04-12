@@ -1,20 +1,19 @@
 
 ## Challenge: The Battle of Sex --- Game Theory with Pure Nash Equalibrium. 
 
-### Abstract：
-
-
-
-
-
-
-
+# Abstract：
+Using Rstudio to simulate a Discrete Utility Choice Model - The Battle of Sex - based on the concept of game theory:game of complete but imperfect information. 
 
 ## The Battle of Sex:
+In game theory, battle of the sexes (BoS) is a two-player coordination game. Imagine a couple that agreed to meet this evening, but cannot recall if they will go shopping or watching football game (and the fact that they forgot is common knowledge). The husband would prefer to go to the football game. The wife would rather go shopping. Both would prefer to go to the same place rather than different ones. If they cannot communicate, where should they go? This is a classical decision making problem when one player's behaviour is depend on another one. 
+
+The payoff matrix labeled "Battle of the Sexes" is an example of Battle of the Sexes, where the wife chooses a row and the husband chooses a column. In each cell, the first number represents the payoff to the wife and the second number represents the payoff to the husband.
+
+<img src="DoNotOpen/1.png/" width="420"><img src="DoNotOpen/2.png/" width="420"> 
 
 
 ## R code: 
-```{R}
+```{r}
 # Installing and importing packages:
 install.packages("ramify")
 require(ramify)
@@ -31,7 +30,7 @@ e4 <- rnorm(n,mean=0,sd=1)
 
 ### Possibilities are exogeneouly generated: 
 
-```{R}
+```{r}
 # p=Prob(shopping|Husband), q=Prob(shopping|Wife), random generation
 p <- runif(n,min=0,max=1)
 q <- runif(n,min=0,max=1)
