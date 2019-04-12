@@ -9,7 +9,7 @@ In game theory, battle of the sexes (BoS) is a two-player coordination game. Ima
 
 The payoff matrix labeled "Battle of the Sexes" is an example of Battle of the Sexes, where the wife chooses a row and the husband chooses a column. In each cell, the first number represents the payoff to the wife and the second number represents the payoff to the husband.
 
-<img src="DoNotOpen/1.png/" width="420"><img src="DoNotOpen/2.png/" width="420"> 
+<img src="DoNotOpen/1.png/" width="520"><img src="DoNotOpen/3.png/" width="400"> 
 
 
 ## R code: 
