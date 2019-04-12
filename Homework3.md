@@ -1,7 +1,7 @@
 
 ## Challenge: The Battle of Sex --- Game Theory with Pure Nash Equalibrium. 
 
-# Abstract：
+#### Subtitle：
 Using Rstudio to simulate a Discrete Utility Choice Model - The Battle of Sex - based on the concept of game theory:game of complete but imperfect information. 
 
 ## The Battle of Sex:
@@ -60,9 +60,9 @@ par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
 <img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420">
-<centre>
+<center>
   <img src="DoNotOpen/0.3.png/" width="500"> 
-</centre>
+</center>
 
 ### Captureing best respondings:
 Now lets computing wife and husband's best respounds to each other's payoff functions. at time t0-t1, wife made her best responds regard to husband's random probabilities of choosing shopping and updated q, wife's probabilities of chooing shopping. At time t1-t2, wife's updated probabilities are took into account by husband and so forth.  
@@ -122,7 +122,7 @@ plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 ```
 <img src="DoNotOpen/1.1.png/" width="420"><img src="DoNotOpen/1.2.png/" width="420"> 
 
-h
+
 ### Conclusion: 
 
 
