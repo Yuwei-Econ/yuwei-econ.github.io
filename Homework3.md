@@ -16,7 +16,7 @@
 ## R code: 
 ```{r}
 # Installing and importing packages:
-install.packages("ramify")
+install.packages("ramify")//R
 require(ramify)
 require(AER)
 require(ggplot2)
