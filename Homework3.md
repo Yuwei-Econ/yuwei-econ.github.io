@@ -26,15 +26,12 @@ e1 <- rnorm(n,mean=0,sd=1)
 e2 <- rnorm(n,mean=0,sd=1)
 e3 <- rnorm(n,mean=0,sd=1) 
 e4 <- rnorm(n,mean=0,sd=1)
-
 ```
 
 
 ### Possibilities are exogeneouly generated: 
 
 ```{r}
-
- 
 # p=Prob(shopping|Husband), q=Prob(shopping|Wife), random generation
 p <- runif(n,min=0,max=1)
 q <- runif(n,min=0,max=1)
@@ -44,17 +41,15 @@ U_shopping_wife <- 10*p+e1
 U_football_wife <- 5*(1-p)+e2
 U_shopping_hus <- 5*q+e3
 U_football_hus <- 10*(1-q)+e4
- 
+
 # profit driven decision making
 y_wife <- argmax(cbind(U_football_wife,U_shopping_wife))-1
 y_hus <- argmax(cbind(U_football_hus,U_shopping_hus))-1
-
 dataRandom <- data.frame(y_wife,y_hus,U_shopping_hus,U_football_hus,U_shopping_wife, U_football_wife, p , q)
 
 #plot respectively:
 ggplot(dataRandom, aes(x=p,y=y_wife))+geom_point()+stat_smooth(method="glm",method.args = list(family="binomial"), se=TRUE)
 ggplot(dataRandom, aes(x=q,y=y_hus))+geom_point()+stat_smooth(method="glm",method.args = list(family="binomial"), se=TRUE)
-
 
 wifefit <- glm(y_wife ~ p,family = binomial(link = "probit"))
 coeftest(wifefit)
@@ -70,11 +65,12 @@ plot(p,Rq,xlab = "p",ylab="q")
 ```
 <img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420"> 
 
-
-
+<centre>
+   <img src="DoNotOpen/0.3.png/" width="500"> 
+</centre>
 ### Captureing best respondings:
-n<-500
 ```{r}
+n<-500
 ## wife: 
 e1 <- rnorm(n,mean=0,sd=1) 
 e2 <- rnorm(n,mean=0,sd=1)
