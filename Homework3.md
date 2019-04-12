@@ -14,9 +14,9 @@
 
 
 ## R code: 
-```{r}
+```{R}
 # Installing and importing packages:
-install.packages("ramify")//R
+install.packages("ramify")
 require(ramify)
 require(AER)
 require(ggplot2)
@@ -31,7 +31,7 @@ e4 <- rnorm(n,mean=0,sd=1)
 
 ### Possibilities are exogeneouly generated: 
 
-```{r}
+```{R}
 # p=Prob(shopping|Husband), q=Prob(shopping|Wife), random generation
 p <- runif(n,min=0,max=1)
 q <- runif(n,min=0,max=1)
