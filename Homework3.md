@@ -68,9 +68,11 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
+<figure class="half">
+   ![NYLS97test](DoNotOpen/0.1.png) 
+   ![NYLS97test](DoNotOpen/0.2.png) 
+</figure>
 
-![NYLS97test](DoNotOpen/0.1.png) 
-![NYLS97test](DoNotOpen/0.2.png) 
 ![NYLS97test](DoNotOpen/0.3.png) 
 
 
