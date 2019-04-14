@@ -1,14 +1,13 @@
 
 ## Challenge: The Battle of Sex --- Game Theory with Pure Nash Equalibrium. 
 
-#### Subtitle：
-
-##### Using Rstudio to simulate a discrete utility choice model, The Battle of Sex,  based on the concept of the game theory: the game with imperfect information. 
+### Subtitle：
+### Using Rstudio to simulate a discrete utility choice model, The Battle of Sex,  based on the concept of the game theory: the game with imperfect information. 
 
 ## The Battle of Sex:
 ##### In game theory, the battle of the sexes (BoS) is a two-player coordination game. Imagine a couple that agreed to meet this evening, but cannot recall if they will go shopping or watching the football game (and the fact that they forgot is common knowledge). The husband would prefer to go to the football game. The wife would rather go shopping. Both would prefer to go to the same place rather than different ones. If they cannot communicate, where should they go? This is a classical decision-making problem when one player's behavior depends on another. 
 
-##### The payoff matrix shown below is an example of Battle of the Sexes, where the wife chooses a row and the husband chooses a column. In each cell, the first number represents the payoff to the wife and the second number represents the payoff to the husband. The graph next to the payoff matrix is a mixed strategy with 3 nash equilibriums circled in red, meaning wife and husband both choosing shopping or football or shopping with probabilities equal to 1/3(husband) and 2/3 (wife) at the same time would have no incentive to change their decisions. 
+### The payoff matrix shown below is an example of Battle of the Sexes, where the wife chooses a row and the husband chooses a column. In each cell, the first number represents the payoff to the wife and the second number represents the payoff to the husband. The graph next to the payoff matrix is a mixed strategy with 3 nash equilibriums circled in red, meaning wife and husband both choosing shopping or football or shopping with probabilities equal to 1/3(husband) and 2/3 (wife) at the same time would have no incentive to change their decisions. 
 
 <img src="DoNotOpen/1.png/" width="450"><img src="DoNotOpen/3.png/" width="390"> 
 
@@ -60,7 +59,7 @@ plot(Rp,q,xlab = "p",ylab="q")
 par(new=TRUE)
 plot(p,Rq,xlab = "p",ylab="q")
 ```
-##### We first compute this model with p and q values generated randomly. This gives the best response of wife and husband given all possibilities of p and q. Utility functions are coded for each cell, allowing wife and husband to make a discrete choice: choosing either shopping or football. 4 error terms are generated to make data points realistic and lines smoothly. As the mixed strategy graph below looks similar to the graph we drew above, it indicates a successful simulation. 
+### We first compute this model with p and q values generated randomly. This gives the best response of wife and husband given all possibilities of p and q. Utility functions are coded for each cell, allowing wife and husband to make a discrete choice: choosing either shopping or football. 4 error terms are generated to make data points realistic and lines smoothly. As the mixed strategy graph below looks similar to the graph we drew above, it indicates a successful simulation. 
 <img src="DoNotOpen/0.1.png/" width="420"><img src="DoNotOpen/0.2.png/" width="420">
 <center>
   <img src="DoNotOpen/0.3.png/" width="500"> 
@@ -122,9 +121,9 @@ par(new=TRUE)
 plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 
 ```
-##### Now lets computing wife and husband's best responses to each other's payoff functions. at time t0-t1, wife made her best response regards to husband's random probabilities of choosing shopping and updated q. At time t1-t2, wife's updated probabilities are taken into account by husband and so forth.
+### Now lets computing wife and husband's best responses to each other's payoff functions. at time t0-t1, wife made her best response regards to husband's random probabilities of choosing shopping and updated q. At time t1-t2, wife's updated probabilities are taken into account by husband and so forth.
 
-##### The left graph shows the level 1 depth of reasoning of wife and husband. the right graph shows the level 2 depth reasoning. As we can see from the graphs, all points are moving towards bottom-left and up-right corners. Because this is a discrete utility choice model, only pure nash equilibriums can be captured. Thus, if we carry on the level of depth reasoning, we will shortly see all points assemble at (0,0) and (1,1). This coincides with the pure nash equilibriums: (shopping, shopping) and (football, football).
+### The left graph shows the level 1 depth of reasoning of wife and husband. the right graph shows the level 2 depth reasoning. As we can see from the graphs, all points are moving towards bottom-left and up-right corners. Because this is a discrete utility choice model, only pure nash equilibriums can be captured. Thus, if we carry on the level of depth reasoning, we will shortly see all points assemble at (0,0) and (1,1). This coincides with the pure nash equilibriums: (shopping, shopping) and (football, football).
 
 <img src="DoNotOpen/1.1.png/" width="420"><img src="DoNotOpen/1.2.png/" width="420"> 
 
