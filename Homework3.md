@@ -121,7 +121,7 @@ par(new=TRUE)
 plot(p_4,q_3,col=rgb(0.2,0.2,0.7,0.2),pch=19,xlab="p",ylab="q")
 
 ```
-#### Now lets computing wife and husband's best responses to each other's payoff functions. at time t0-t1, wife made her best response regards to husband's random probabilities of choosing shopping and updated q. At time t1-t2, wife's updated probabilities are taken into account by husband and so forth.
+#### Now let's compute wife and husband's best responses into each other's payoff functions. at time t0-t1, wife made her best response regards to husband's random probabilities of choosing shopping and then updated q. At time t1-t2, wife's updated probabilities are taken into account by husband and so forth.
 
 #### The left graph shows the level 1 depth of reasoning of wife and husband. the right graph shows the level 2 depth reasoning. As we can see from the graphs, all points are moving towards bottom-left and up-right corners. Because this is a discrete utility choice model, only pure nash equilibriums can be captured. Thus, if we carry on the simulation and increase the depth of reasoning, we will shortly see all points assemble at (0,0) and (1,1). This coincides with the pure nash equilibriums: (shopping, shopping) and (football, football).
 
